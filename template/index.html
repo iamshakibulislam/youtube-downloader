@@ -1,0 +1,222 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>youtube downloader</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/glyphicons.css' %}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">Y2DOWN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li> -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-download"></i>Downloader</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Privacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Faq</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Contact</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+		<div class="row d-flex justify-content-center">
+		<div class="col-md-6 mt-5 ml-5">
+		
+			
+			<input type="text" name="url" placeholder="Enter your youtube link here" id="link" class="form-control input-lg shadow-lg">
+		</div>
+		<div class="col-md-3 mt-5 offset-md-0">
+			<input type="submit" name="download" value="Download" id="download" class="btn btn-primary btn-md ml-1 d-inline">
+		</div><br>
+		
+		</div>
+	</div>
+	</div>
+
+</div>
+
+<div id="loading_image" class="l">
+<div class="row d-flex justify-content-center  mt-5"  style="background-color:rgb(229, 239, 241)">
+	<div class="col-md-6" >
+<div class="loading"><img src="{% static 'img/loading.gif' %}" style="margin-top:0px"></div>
+</div>
+</div>
+</div>
+
+
+
+<!--video output section-->
+<div class="container-fluid mt-5 output" id="output">
+	<div class="row">
+		<div class="col-md-4 offset-md-0 ml-5">
+			<div class="thumb">
+			
+		</div>
+
+			<h5 class="text-primary mt-2 mb-1 title"></h5>
+			<div class="downloadhd">
+			
+			</div>
+		</div>
+		<div class="col-md-7">
+		<div class="downloadtable">
+
+			
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!--end of video output-->
+
+
+<div class="container-fluid mt-5 mb-0" style="background-color:rgb(102, 102, 153)">
+	<div class="row ">
+		<div class="col-md-6 mt-4 mb-4">
+			
+			<h3 class="text-white">Download video instantly</h1>
+			<ul class="text-white">
+				<li>copy and paste the youtube link into search box</li>
+				<li>wait untill it is finally loaded</li>
+				<li>click on your desired video format</li>
+				<li>if download doesnot start then right click on your mouse and click save/download</li>
+				<li>if video starts playing just click the dots of the bottom of the player and hit download</li>
+				<li>Save YouTube video as 1080p, 2K & 4K formats</li>
+				<li>Save Youtube to mp3 & download (Youtube only)</li>
+				<li>Unlimited free conversions and downloads, no signup</li>
+				<li>No additional software required for HD downloads</li>
+				<li>Works great on any Android phones & devices</li>
+
+			</ul>
+		</div>
+		<div class="col-md-6 mt-4 mb-4">
+			<h3 class="text-white">Youtube to mp3 conversion</h1>
+			<ul class="text-white">
+				<li>Find & open video that You want to save to mp3</li>
+				<li>Click Share, then Copy. Link is copied into Clipboard</li>
+				<li>Navigate back to y2down mp3 converter</li>
+				<li>Paste link from Clipboard into the white box, submit</li>
+				<li>Use buttons to save Youtube to Mp3 & downloa</li>
+				
+
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--footer area-->
+
+  
+<footer class="mainfooter mt-0" role="contentinfo">
+  <div class="footer-middle">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Heading 1</h4>
+          <ul class="list-unstyled">
+            <li><a href="#"></a></li>
+            <li><a href="#">Payment Center</a></li>
+            <li><a href="#">Contact Directory</a></li>
+            <li><a href="#">Forms</a></li>
+            <li><a href="#">News and Updates</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Heading 2</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Website Tutorial</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Webmaster</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Heading 3</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Parks and Recreation</a></li>
+            <li><a href="#">Public Works</a></li>
+            <li><a href="#">Police Department</a></li>
+            <li><a href="#">Fire</a></li>
+            <li><a href="#">Mayor and City Council</a></li>
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    	<div class="col-md-3">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            </ul>				
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-md-12 copy">
+			<p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+		</div>
+	</div>
+
+
+  </div>
+  </div>
+</footer>
+
+
+<!--end of footer area-->
+
+
+</body>
+</html>
