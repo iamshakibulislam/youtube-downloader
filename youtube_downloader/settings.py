@@ -25,7 +25,7 @@ SECRET_KEY = 'q-!t^(s)o&x!n7%)=s+oc#m!=3h=m1iti9hl+)xkns+ti)kg#f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','49.12.107.5','y2down.net','www.ytdown.net']
 
 
 # Application definition
