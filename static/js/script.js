@@ -72,7 +72,7 @@ waitSeconds(7000);
 
  $('button').text('Download');
  var id=data.id;
- window.location.href = "https://ann5353.loader.to/api/get.php?id="+id;
+ window.location.href = "https://sally7878.loader.to/api/get.php?id="+id;
 
 
 }) //
