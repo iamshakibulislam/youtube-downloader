@@ -47,6 +47,14 @@ def download(request):
 		js=json.loads(contents.content)
 		id_num=js['id']
 
+		api={'download_url':None}
+		while api['download_url'] == None:
+
+			server=requests.get('https://loader.to/ajax/progress.php?id='+id_num)
+			api=json.loads(server.content)
+
+		downloadlink=api['download_url']
+
 
 
 		
@@ -54,6 +62,6 @@ def download(request):
 
 		
 
-		return JsonResponse({'id':id_num},safe=False)
+		return JsonResponse({'link':downloadlink},safe=False)
 
 

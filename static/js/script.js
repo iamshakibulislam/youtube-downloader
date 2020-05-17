@@ -56,7 +56,7 @@ var format=$(this).prev().val();
 
 if(lnk=='' || format==''){alert('something wrong')}else{
 
-$(this).text('downloading.......');
+$(this).text(' wait 30sec downloading.......');
 
 $.ajax({
   dataType:'json',
@@ -72,7 +72,7 @@ waitSeconds(7000);
 
  $('button').text('Download');
  var id=data.id;
- window.location.href = "https://sally7878.loader.to/api/get.php?id="+id;
+ window.location.href = data.link;
 
 
 }) //
