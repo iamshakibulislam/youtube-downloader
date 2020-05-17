@@ -5,6 +5,7 @@ from requests_html import HTMLSession,AsyncHTMLSession
 import time
 import json
 import requests
+from fake_useragent import UserAgent
 def index(request):
 	return render(request,'index.html')
 
@@ -42,6 +43,9 @@ def download(request):
 	if request.method == 'GET':
 		lnk=str(request.GET['link'])
 		formt=str(request.GET['format'])
+		ua = UserAgent()
+
+		header = {'User-Agent':str(ua.chrome)}
 
 		contents=requests.get('https://loader.to/ajax/download.php?start=1&end=20&format='+formt+'&url='+lnk)
 		js=json.loads(contents.content)
@@ -51,8 +55,8 @@ def download(request):
 		api={'download_url':None,'success':"0"}
 		while api['download_url'] == None :
 
-			server=requests.get('https://loader.to/ajax/progress.php?id='+id_num)
-			time.sleep(10)
+			server=requests.get('https://loader.to/ajax/progress.php?id='+id_num,headers=header)
+			time.sleep(5)
 			api=json.loads(server.content)
 			
 
