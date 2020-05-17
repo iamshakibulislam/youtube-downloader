@@ -68,7 +68,7 @@ $.ajax({
 .done(function(data){
 
 
-waitSeconds(7000);
+
 
  $('button').text('Download');
  var id=data.id;
