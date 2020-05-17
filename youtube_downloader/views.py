@@ -45,7 +45,7 @@ def download(request):
 		formt=str(request.GET['format'])
 		ua = UserAgent()
 
-		header = {'User-Agent':str(ua.chrome)}
+		header = {'User-Agent':str(ua.chrome),'Accept':'image/webp,image/apng,image/*,*/*;q=0.8','Sec-Fetch-Dest':'image','Sec-Fetch-Mode':'no-cors','Sec-Fetch-Site':'cross-site','content-disposition':'attachment'}
 
 		contents=requests.get('https://loader.to/ajax/download.php?start=1&end=20&format='+formt+'&url='+lnk)
 		js=json.loads(contents.content)
