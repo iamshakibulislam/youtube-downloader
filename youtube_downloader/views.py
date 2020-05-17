@@ -1,8 +1,10 @@
 from django.shortcuts import render,redirect
 from bs4 import BeautifulSoup
 from django.http import JsonResponse
-from requests_html import HTMLSession
-
+from requests_html import HTMLSession,AsyncHTMLSession
+import time
+import json
+import requests
 def index(request):
 	return render(request,'index.html')
 
@@ -10,6 +12,7 @@ def index(request):
 def urlsubmit(request):
 	json={}
 	if request.method == 'GET':
+		
 		link = request.GET['link']
 		session=HTMLSession()
 		content=session.get('https://savemedia.website/v9/?url='+link)
@@ -25,10 +28,32 @@ def urlsubmit(request):
 
 		table=str(soup.find('table',attrs={'class':'table-striped'}))
 		json['table']=table
+		json['url'] = link
 
 		
+
 
 
 		
 		return JsonResponse(json,safe=False)
+
+
+def download(request):
+	if request.method == 'GET':
+		lnk=str(request.GET['link'])
+		formt=str(request.GET['format'])
+
+		contents=requests.get('https://loader.to/ajax/download.php?start=1&end=20&format='+formt+'&url='+lnk)
+		js=json.loads(contents.content)
+		id_num=js['id']
+
+
+
+		
+
+
+		
+
+		return JsonResponse({'id':id_num},safe=False)
+
 

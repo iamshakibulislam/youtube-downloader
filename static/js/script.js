@@ -1,4 +1,12 @@
-
+function waitSeconds(iMilliSeconds) {
+    var counter= 0
+        , start = new Date().getTime()
+        , end = 0;
+    while (counter < iMilliSeconds) {
+        end = new Date().getTime();
+        counter = end - start;
+    }
+};
 
 $(document).ready(function(){
 
@@ -25,18 +33,61 @@ $(document).on('click','#download',function(){
       $('#output').css('display','block');
       $('.title').empty();
       $('.title').append(data.title);
-      $('.downloadhd').empty();
-      $('.downloadhd').append(data.hd);
+     // $('.downloadhd').empty();
+     // $('.downloadhd').append(data.hd);
       $('.downloadhd a').attr('class','btn btn-success btn-lg');
-      $('.downloadtable').empty();
-      $('.downloadtable').append(data.table);
+      $('.link').val(url);
+      //$('.downloadtable').empty();
+      //$('.downloadtable').append(data.table);
 
 
     }) //end of ajax done function
+    .fail(function(){alert('something went wrong,try again later')})
 
     ;}
 
 });
+
+
+$(document).on('click','.dload',function(){
+
+var lnk=$(this).prev().prev().val();
+var format=$(this).prev().val();
+
+if(lnk=='' || format==''){alert('something wrong')}else{
+
+$(this).text('downloading.......');
+
+$.ajax({
+  dataType:'json',
+      data:{'link':lnk,'format':format},
+      type:'GET',
+      url:'/download/'
+
+})
+.done(function(data){
+
+
+waitSeconds(7000);
+
+ $('button').text('Download');
+ var id=data.id;
+ window.location.href = "https://ann5353.loader.to/api/get.php?id="+id;
+
+
+}) //
+
+.fail(function(){
+  alert('failed,try again');
+})
+
+
+
+} //end of else function
+
+
+
+}); //end of clicking download function
 
 
 })
