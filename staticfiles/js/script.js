@@ -72,7 +72,7 @@ waitSeconds(7000);
 
  $('button').text('Download');
  var id=data.id;
- window.location.href = data.link;
+ window.location.replace(data.link);
 
 
 }) //
