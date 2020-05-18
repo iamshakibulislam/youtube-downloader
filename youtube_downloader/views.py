@@ -6,6 +6,9 @@ import time
 import json
 import requests
 from fake_useragent import UserAgent
+
+
+
 def index(request):
 	return render(request,'index.html')
 
