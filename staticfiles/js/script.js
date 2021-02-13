@@ -37,12 +37,7 @@ $(document).on('click','#download',function(){
       $('#output').css('display','block');
       $('.title').empty();
       $('.title').append(data.title);
-     // $('.downloadhd').empty();
-     // $('.downloadhd').append(data.hd);
-      $('.downloadhd a').attr('class','btn btn-success btn-lg');
-      $('.link').val(url);
-      //$('.downloadtable').empty();
-      //$('.downloadtable').append(data.table);
+    
 
 
     }) //end of ajax done function
@@ -51,6 +46,8 @@ $(document).on('click','#download',function(){
     ;}
 
 });
+
+/*
 
 
 
@@ -114,6 +111,7 @@ window.location.replace(d[d.length-1]);
   alert('something went wrong');
 });
 
+*/
 
 
 
@@ -175,11 +173,11 @@ $.ajax({
 
 
 
-} //end of else function
+//} //end of else function
 
 
 
-}); //end of clicking download function
+//}); //end of clicking download function
 
 
 })
