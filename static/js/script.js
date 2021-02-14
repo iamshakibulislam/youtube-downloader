@@ -37,6 +37,12 @@ $(document).on('click','#download',function(){
       $('#output').css('display','block');
       $('.title').empty();
       $('.title').append(data.title);
+
+      $('#q1080').attr('src','https://loader.to/api/button/?url='+url+'&f=1080&color=ed3507');
+      $('#q720').attr('src','https://loader.to/api/button/?url='+url+'&f=720&color=ed3507');
+      $('#q480').attr('src','https://loader.to/api/button/?url='+url+'&f=480&color=ed3507');
+      $('#q360').attr('src','https://loader.to/api/button/?url='+url+'&f=360&color=ed3507');
+      $('#qmp3').attr('src','https://loader.to/api/button/?url='+url+'&f=mp3&color=ed3507');
     
 
 
@@ -46,6 +52,8 @@ $(document).on('click','#download',function(){
     ;}
 
 });
+
+
 
 /*
 
